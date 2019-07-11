@@ -1,0 +1,6 @@
+{
+	"String":["abc","abc def"],
+	"int" : [1,22],
+	"boolean":[true,false],
+	"JSONArray" : [["abc",12,true]]
+}

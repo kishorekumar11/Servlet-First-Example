@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="com.fasterxml.jackson.annotations">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.annotations.jar" />
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.core.jar" />
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.csv.jar" />
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.databind.jar" />
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.jaxb.jar" />
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.smile.jar" />
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.xml.jar" />
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.yaml.jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.annotations.jar" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.core.jar" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.csv.jar" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.databind.jar" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.jaxb.jar" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.smile.jar" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.xml.jar" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.yaml.jar" recursive="false" />
+  </library>
+</component>

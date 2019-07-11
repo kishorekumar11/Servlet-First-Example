@@ -1,0 +1,19 @@
+{
+	"String": {
+		"validInput" : ["abc","a d"],
+		"invalidInput" : [12]
+	},
+	"int": {
+		"validInput" : [12],
+		"invalidInput" : [true]
+	},
+	"boolean": {
+		"validInput" : [true],
+		"invalidInput" : [22]
+	},
+	"JSONArray": {
+		"validInput" : [["abc",12,true]],
+		"invalidInput" : [123]
+	}
+}
+

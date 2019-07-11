@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.fasterxml.jackson.annotations">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.annotations.jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Downloads/fasterxml lib/com.fasterxml.jackson.annotations.jar" recursive="false" />
+  </library>
+</component>
