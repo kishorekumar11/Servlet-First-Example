@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.convention.action.suffix" value="Controller"/>
+    <constant name="struts.convention.action.mapAllMatches" value="true"/>
+    <constant name="struts.convention.default.parent.package" value="rest-default"/>
+    <constant name="struts.convention.package.locators" value="action"/>
+
+    <package name="API" extends="struts-default">
+
+        <action name="download" class="com.TestEnumerator.action.DownloadController">
+            <result name="error">error.jsp</result>
+        </action>
+
+        <action name="upload" class="com.TestEnumerator.action.UploadController">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">application/json</param>
+                <param name="maximumSize">10240</param>
+            </interceptor-ref>
+        </action>
+    </package>
+</struts>
