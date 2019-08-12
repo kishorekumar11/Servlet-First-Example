@@ -1,0 +1,503 @@
+<html>
+    <head>
+        <title>Difference in Modules</title>
+        <style>
+		body
+		{
+			font-family:"Trebuchet MS", Helvetica, sans-serif;
+			margin: 0%;
+			font-size:100%;
+			overflow: hidden;
+		}
+		.tables{ }
+		#Home li
+		{
+			list-style: none;
+		}
+		#Home
+		{
+
+			padding: 1% 2% 2% 2%;
+			padding-left: 0;
+			width:12%;
+			font-size:90%;
+			height:100%;
+			float:left;
+			position:fixed;
+		}
+		table
+		{
+			border-collapse: collapse;
+			font-size: 100%;
+		}
+		tr
+		{
+
+		}
+		ul
+		{
+			list-style-type:none;
+		}
+		.deleted
+		{
+			background-color: #fecfda ;
+			padding: 20px;
+
+		}
+		.true
+		{
+			/*table is updated*/
+			background-color:  white;
+		}
+		.truetrue
+		{
+			/*Updated*/
+			background-color:  #fdfdc3;
+		}
+		.table1 .truetrue
+		{
+			background-color: #fec29a;
+		}
+		.table1.truetrue
+		{
+			background-color: #fec29a;
+		}
+		.new
+		{
+			background-color:#d4fdd4;
+
+		}
+		.deleted.new
+		{
+			color:white;
+			background-color:white !important;
+		}
+		.deleted .new
+		{
+			color:white;
+			background-color:white !important;
+		}
+		#title h3
+		{
+			font-size: 115%;
+
+			padding-left:1.2%;
+		}
+		#title
+		{
+			width:100%;
+			position:fixed;
+		}
+		#title a
+		{
+			font-family: "Trebuchet MS", Helvetica, sans-serif;
+			font-size:14px;
+			line-height:32px;
+			color:#fff;
+			padding-left: 30px;
+			text-decoration:none !important;
+		}
+		.module li
+		{
+			background-image:url(../../images/arrow.png);
+			background-repeat:no-repeat;
+			background-position: 16px 10px;
+		}
+		.module a:hover
+		{
+			background-image:url(../../images/arrow.png);
+			background-repeat:no-repeat;
+			background-position: 16px 12px;
+			text-decoration:none !important;
+			background-color: #EEE !important;
+			color: #60A1C6 !important;
+			padding: 10px 146px 8px 30px !important;
+		}
+		#summary a
+		{
+			font-family: "Trebuchet MS", Helvetica, sans-serif;
+			font-size:14px;
+			line-height:32px;
+			color:#444;
+			padding-left: 30px;
+			text-decoration:none !important;
+		}
+		#summary
+		{
+			float: left;
+			width: 20%;
+			font-size: 85%;
+			padding-left: 4px;
+			margin-top: 98px;
+			position: fixed;
+			margin-left: 14%;
+			height: 84%;
+                        overflow-y:visible;
+                        overflow-x:hidden;
+			padding-top: 10px;
+			background-color: #eee;
+		}
+		#diff
+		{
+			float:left;
+			height:80%;
+			margin-top: 10%;
+			position:fixed;
+			overflow-y:scroll;
+			width: 65.8%;
+			margin-left: 34.2%;
+		}
+		#summary li
+		{
+			padding: 1px 70px 2px 25px !important;
+		}
+		.truetruetrue
+		{
+			background-color:  #fdfdc3;
+		}
+		.table1 .truetruetrue
+		{
+			background-color: #fec29a;
+		}
+		.table2
+		{
+			width:25%;
+			padding-top: 2%;
+		}
+		.table1
+		{
+			margin-left:-5%;
+		}
+		#summary div div div ul
+		{
+			margin-top: -3%;
+			margin-bottom: -1%;
+		}
+		#summary p
+		{
+			cursor: pointer;
+			font-family: "Trebuchet MS", Helvetica, sans-serif;
+			font-size:14px;
+			line-height:18px;
+			color:#444;
+			padding: 1px 70px 2px 25px !important;
+			text-decoration:none !important;
+			background-image: url(../../images/arrow1.png);
+			background-repeat: no-repeat;
+			background-position: 16px 3px;
+		}
+		#summary ul p
+		{
+			margin-left: -11px !important;
+			padding: 1px 70px 2px 25px !important;
+		}
+		.module2 a
+		{
+			margin-left:-43px;
+			background-image:url(../../images/arrow1.png);
+			background-repeat:no-repeat;
+			background-position: 16px 10px;
+			padding: 5px 0px 2px 25px !important;
+		}
+		.normal
+		{
+			color:black;
+			font-weight: normal;
+		}
+		.module .current
+		{
+			color: #60a1c6 !important;
+			background-color: #eee !important;
+			padding: 10px 146px 8px 30px !important;
+			background-image: url(../../images/arrow2.png);
+			background-repeat: no-repeat;
+			background-position: 16px 12px;
+			text-decoration: none !important;
+		}
+		.module2 .current
+		{
+			color: #60a1c6 !important;
+			padding:10px 0px 8px 30px !important;
+			background-image: url(../../images/arrow2.png);
+			background-repeat: no-repeat;
+			background-position: 16px 12px;
+			text-decoration: none !important;
+			padding: 10px 0px 2px 25px !important;
+		}
+
+		#moduleHeading
+		{
+			position: fixed;
+			float: left;
+			margin-left: 45.2%;
+			margin-top: 5.7%;
+			padding-left: 13%;
+			width: 65.8%;
+			font-size: 115%;
+			padding-top: 9px;
+		}
+		#moduleHeading h3
+		{
+			color:#333 !important;
+			border-bottom:1px solid #555;
+		}
+		#colour-indicator
+		{
+			width: 12%;
+			font-size: 65%;
+			float: right;
+			padding-top: 10px;
+		}
+		#colour-indicator table
+		{
+			border-collapse: initial;
+		}
+		.colour_icon
+		{
+			width:15%;
+			border-radius:50%;
+		}
+		.header
+		{
+			background-color:#f2f2f2;
+			border-bottom:1px solid #e6e6e6;
+			padding: 27px 20px 32px 23px;
+			margin:0;
+			color:#333333;
+		}
+		.header h4
+		{
+			margin-top:-0.2%;
+			text-align:center;
+			padding-left:10%;
+		}
+		.header img
+		{
+			height:7%;
+			width:10%;
+			margin-top:-1%;
+		}
+		.module
+		{
+			background-color:#60a1c6;
+			color:#fff;
+		}
+		.module li a
+		{
+			font-family: "Myriad Pro", Arial, sans-serif;
+			font-size:14px;
+			line-height:28px;
+			color:#fff;
+			padding-left: 10px;
+		}
+		.module2 p:hover
+		{
+			background-color: #60A1C6 !important;
+			color: #FFF !important;
+			padding: 10px 0px 4px 25px !important;
+		}
+		.module2 li:hover
+		{
+			background-color: #60A1C6 !important;
+			padding: 5px 0px 2px 25px !important;
+		}
+		.module2 li:hover a
+		{
+			color: #FFF !important;
+		}
+	</style> 
+        <script type="text/javascript">
+            function initialise()
+            {
+                var id = location.hash.substring(1,location.hash.length);
+                var dictionary=id.split("-");
+                var moduleName=dictionary[0];
+                if(id.length!=0)
+                {
+                    $("a[href='#"+moduleName+"']").eq(0).trigger("onclick");
+                    $("a[href='#"+id+"']").eq(0).trigger("onclick");
+                }
+                else
+                {
+                        initialiseSummaryDiv();
+                        initialiseDiff();
+                        initialiseHeader();
+                }
+            }
+            function displayTag(tableName,id)
+            {
+                var elementId=tableName+id;
+                if(elementId==tableName+"_fkEnd")
+                {
+                    if(document.getElementById(tableName+"_fkStart").style.display=="inline")
+                    {
+                        document.getElementById(elementId).style.display="inline";
+                    }
+                }
+                else if(elementId==tableName+"_indexEnd")
+                {
+                    if(document.getElementById(tableName+"_indexStart").style.display=="inline")
+                    {
+                        document.getElementById(elementId).style.display="inline";
+                    }
+                }
+                else
+                {
+                    document.getElementById(elementId).style.display="inline";
+                }
+            }
+        </script> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body id="content" onload="initialise()">
+        <div id="title">
+            <div id="colour-indicator">
+                <table>
+                    <tr>
+                        <td class="new colour_icon"></td>
+                        <td>: Added</td>
+                    </tr>
+                    <tr>
+                        <td class="colour_icon" style="background-color:#FF9454;"></td>
+                        <td>: Before Modification</td>
+                    </tr>
+                    <tr>
+                        <td class="colour_icon" style="background-color:#FFFFB2;"></td>
+                        <td>: After Modification</td>
+                    </tr>
+                    <tr>
+                        <td class="colour_icon" style="background-color:#FCBBCA;"></td>
+                        <td>: Deleted</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="header" id="head">
+                 <img src="../../images/logo.png" style="float:left"/>
+                 <h4>Schema Diff Report for </h4>
+            </div>
+            <div id="Home" class="module">
+            </div>
+        </div>
+        <div id="summary" class="module2"></div>
+        <div id="moduleHeading"></div>
+        <div id="diff"></div>
+    </body>
+    <script  src="../../bootstrap/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(window).bind('hashchange',function()
+        {
+                initialise();
+        });
+        function collapse(elementId)
+        {
+            var collapseElement=document.getElementById(elementId);
+            if(collapseElement.style.display=="none")
+            {
+                collapseElement.style.display="inline-block";
+            }
+            else
+            {
+                collapseElement.style.display="none";
+            }
+        }
+        function initialiseSummaryDiv()
+        {
+            var anchorList=document.getElementById("Home");
+            var firstModule=anchorList.children.item(0).children.item(0).getAttribute("name");
+            var summary=document.getElementById("summary"+firstModule);
+            summary.style.display="block";
+        }
+        function setSummary(moduleSummary)
+        {
+            var allSummary=document.getElementById("summary");
+            var allSummaryChildren=allSummary.children;
+            for(var i=0;i<allSummaryChildren.length;i++)
+            {
+                allSummaryChildren.item(i).style.display="none";
+            }
+            var summary=document.getElementById(moduleSummary);
+            summary.style.display="block";
+        }
+        function initialiseHeader()
+        {
+            var moduleHeaderName=document.getElementById("Home").children.item(0).children.item(0).getAttribute("name");
+            var firstModuleHeader=document.getElementById(moduleHeaderName+"Heading");
+            firstModuleHeader.style.display="inline-block";
+        }
+        function makeHeaderVisible(moduleName)
+        {
+            var header=document.getElementById("moduleHeading").children;
+            for(var i=0;i<header.length;i++)
+            {
+                header.item(i).style.display="none";
+            }
+            var moduleHeader=document.getElementById(moduleName+"Heading");
+            moduleHeader.style.display="inline-block";
+        }
+        function changeActive(currentElement,divId)
+        {
+            var divElement=document.getElementById(divId);
+            var anchorElement=divElement.getElementsByTagName("a");
+            for(var i=0;i<anchorElement.length;i++)
+            {
+                anchorElement[i].className="normal";
+            }
+            currentElement.className="current";
+        }
+        function displayDiff(moduleName)
+        {
+            var diffModules=document.getElementById("diff").children;
+            for(var i=0;i<diffModules.length;i++)
+            {
+                diffModules.item(i).style.display="none";
+            }
+            var displayModule=document.getElementById(moduleName);
+            displayModule.style.display="";
+            $('#'+moduleName+' .table').css({display:''});
+            $('#'+moduleName+' .column').css({display:''});
+            $('#'+moduleName+' .primaryKey').css({display:''});
+            $('#'+moduleName+' .foreignKey').css({display:''});
+            $('#'+moduleName+' .index').css({display:''});
+        }
+        function initialiseDiff()
+        {
+            var displayDiffName=document.getElementById("Home").children.item(0).children.item(0).getAttribute("name");
+            displayDiff(displayDiffName);
+        }
+        if(typeof String.prototype.trim !== 'function')
+        {
+            String.prototype.trim = function() {
+                return this.replace(/^\s+|\s+$/g, '');
+            };
+        }
+        function displayTable(moduleName,tableName,currentElement,list)
+        {
+            $('#'+moduleName+' .table').css({display:'none'});
+            $('#'+moduleName+"-"+tableName+'').css({display:''});
+            var currentElements=currentElement.toString().split("#");
+            currentElements=currentElements[1].split("-");
+            if(currentElements.length<=2||list==null)
+            {
+                $('#'+moduleName+"-"+tableName+' .column').css({display:''});
+                $('#'+moduleName+"-"+tableName+' .primaryKey').css({display:''});
+                $('#'+moduleName+"-"+tableName+' .foreignKey').css({display:''});
+                $('#'+moduleName+"-"+tableName+' .index').css({display:''});
+            }
+            else
+            {
+                $('#'+moduleName+"-"+tableName+' .column').css({display:'none'});
+                $('#'+moduleName+"-"+tableName+' .primaryKey').css({display:'none'});
+                $('#'+moduleName+"-"+tableName+' .foreignKey').css({display:'none'});
+                $('#'+moduleName+"-"+tableName+' .index').css({display:'none'});
+                $('#'+currentElement[1]+'').css({display:''});
+                list=list.replace('[','');
+                list=list.replace(']','');
+                var listItems=list.split(",");
+                for(var n=0;n<listItems.length;n++)
+                {
+                    document.getElementById(listItems[n].trim()).style.display="";
+                }
+            }
+        }
+    </script>  
+</html>

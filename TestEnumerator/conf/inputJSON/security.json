@@ -1,0 +1,1373 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Desktop Central",
+    "description" : "Simple Security UI",
+    "version" : "1.0.0"
+  },
+  "tags" : [ {
+    "name" : "Configuration"
+  }, {
+    "name" : "Reports"
+  }, {
+    "name" : "security-config"
+  } ],
+  "paths" : {
+    "/dcapi/reports/activeDirectory/GPO/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/OUDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macLoginItems" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macSysPreference/deploy" : {
+      "post" : {
+        "tags" : [ "Configuration" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/users/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/userDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/GPO/${longvalue}/linkedContainers" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/OUDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/domainControllers" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "domainID",
+          "regex" : "longvalue",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/domainControllerDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/OU/${longvalue}/members" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/memberDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macLoginWindow" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macMessageBox" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/containers" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "domainID",
+          "regex" : "longvalue",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/containerDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/linuxMessageBox/deploy" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macMessageBox/deploy" : {
+      "post" : {
+        "tags" : [ "Configuration" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macLoginItems/deploy" : {
+      "post" : {
+        "tags" : [ "Configuration" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macEnergySaver" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macEnergySaver/deploy" : {
+      "post" : {
+        "tags" : [ "Configuration" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/sites/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/siteDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macLoginWindow/deploy" : {
+      "post" : {
+        "tags" : [ "Configuration" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/printers/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/printerDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/group/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/groupDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/OU/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/OUDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macGateKeeper" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/domain/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/domainDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/linuxMessageBox" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/GPO/${longvalue}/enforcedContainers" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/OUDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macNetworkShare/deploy" : {
+      "post" : {
+        "tags" : [ "Configuration" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macSysPreference" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/group/${longvalue}/members" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/memberDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macGateKeeper/deploy" : {
+      "post" : {
+        "tags" : [ "Configuration" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/domainControllers/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/domainControllerDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    },
+    "/dcapi/configuration/macNetworkShare" : {
+      "post" : {
+        "tags" : [ "security-config" ],
+        "security" : [ {
+          "Configurations_Write" : [ "write" ]
+        } ],
+        "summary" : "Role: Configurations_Write",
+        "parameters" : [ {
+          "type" : "JSONObject",
+          "in" : "path",
+          "required" : true,
+          "max_len" : -1,
+          "schema" : {
+            "$ref" : "#/components/schemas/configJSON"
+          },
+          "name" : "configJSON"
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Configurations_Write",
+            "description" : "write"
+          }
+        }
+      }
+    },
+    "/dcapi/reports/activeDirectory/computers/${longvalue}" : {
+      "get" : {
+        "tags" : [ "Reports" ],
+        "security" : [ {
+          "Report_Read" : [ "read" ]
+        } ],
+        "summary" : "Role: Report_Read",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "regex" : "safestring",
+          "secret" : "true",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        }, {
+          "name" : "Accept",
+          "value" : "application/computerDetails.v1+json",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "$ref" : ""
+          }
+        } ],
+        "responses" : {
+          "Default" : {
+            "roles" : "Report_Read",
+            "url_type" : "multiple",
+            "description" : "read"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "configJSON" : {
+        "properties" : {
+          "applyAlways" : {
+            "type" : "boolean"
+          },
+          "description" : {
+            "type" : "String"
+          },
+          "emailDuration" : {
+            "type" : "int"
+          },
+          "label" : {
+            "type" : "String"
+          },
+          "configType" : {
+            "type" : "String"
+          },
+          "noOfRetries" : {
+            "type" : "int"
+          },
+          "refreshMinRetry" : {
+            "type" : "int"
+          },
+          "platform" : {
+            "type" : "String"
+          },
+          "collectionType" : {
+            "type" : "int"
+          },
+          "enableLogonStartupMinRetry" : {
+            "type" : "boolean"
+          },
+          "logonStartupMinRetry" : {
+            "type" : "int"
+          },
+          "configDetails" : {
+            "type" : "JSONArray"
+          },
+          "enableEmailNotify" : {
+            "type" : "boolean"
+          },
+          "enableRetry" : {
+            "type" : "boolean"
+          },
+          "emailEnabledDays" : {
+            "type" : "int"
+          },
+          "enableRefreshMinRetry" : {
+            "type" : "boolean"
+          },
+          "email" : {
+            "type" : "String"
+          }
+        }
+      },
+      "ENERGYSAVER_OSX" : {
+        "properties" : {
+          "configDetails" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/configJSON"
+            }
+          },
+          "details" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/energySaverDetails"
+            }
+          },
+          "version" : {
+            "type" : "String"
+          }
+        }
+      },
+      "LOGINITEM_OSX" : {
+        "properties" : {
+          "configDetails" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/configJSON"
+            }
+          },
+          "details" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/loginItemDetails"
+            }
+          },
+          "version" : {
+            "type" : "String"
+          }
+        }
+      },
+      "NETWORKSHARES_OSX" : {
+        "properties" : {
+          "configDetails" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/configJSON"
+            }
+          },
+          "details" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/networkShareDetails"
+            }
+          },
+          "version" : {
+            "type" : "String"
+          }
+        }
+      },
+      "systemPrefDetails" : {
+        "properties" : {
+          "languageAndText" : {
+            "type" : "boolean"
+          },
+          "securityAndPrivacy" : {
+            "type" : "boolean"
+          },
+          "accessibility" : {
+            "type" : "boolean"
+          },
+          "startupDisk" : {
+            "type" : "boolean"
+          },
+          "energySaver" : {
+            "type" : "boolean"
+          },
+          "sound" : {
+            "type" : "boolean"
+          },
+          "parentalControls" : {
+            "type" : "boolean"
+          },
+          "displays" : {
+            "type" : "boolean"
+          },
+          "network" : {
+            "type" : "boolean"
+          },
+          "xsan" : {
+            "type" : "boolean"
+          },
+          "general" : {
+            "type" : "boolean"
+          },
+          "mouse" : {
+            "type" : "boolean"
+          },
+          "mobileme" : {
+            "type" : "boolean"
+          },
+          "cdsAndDvds" : {
+            "type" : "boolean"
+          },
+          "java" : {
+            "type" : "boolean"
+          },
+          "revokeAll" : {
+            "type" : "boolean"
+          },
+          "dock" : {
+            "type" : "boolean"
+          },
+          "dictationAndSpeech" : {
+            "type" : "boolean"
+          },
+          "timeMachine" : {
+            "type" : "boolean"
+          },
+          "keyboard" : {
+            "type" : "boolean"
+          },
+          "internetAccounts" : {
+            "type" : "boolean"
+          },
+          "ink" : {
+            "type" : "boolean"
+          },
+          "profiles" : {
+            "type" : "boolean"
+          },
+          "flashPlayer" : {
+            "type" : "boolean"
+          },
+          "sharing" : {
+            "type" : "boolean"
+          },
+          "trackPad" : {
+            "type" : "boolean"
+          },
+          "appStore" : {
+            "type" : "boolean"
+          },
+          "bluetooth" : {
+            "type" : "boolean"
+          },
+          "printAndScan" : {
+            "type" : "boolean"
+          },
+          "fibreChannel" : {
+            "type" : "boolean"
+          },
+          "displayAndScreensaver" : {
+            "type" : "boolean"
+          },
+          "usersAndGroups" : {
+            "type" : "boolean"
+          },
+          "softwareUpdate" : {
+            "type" : "boolean"
+          },
+          "icloud" : {
+            "type" : "boolean"
+          },
+          "notifications" : {
+            "type" : "boolean"
+          },
+          "spotlight" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "SYSTEMPREFERENCE_RESTRICTIONS_OSX" : {
+        "properties" : {
+          "configDetails" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/configJSON"
+            }
+          },
+          "details" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/systemPrefDetails"
+            }
+          },
+          "version" : {
+            "type" : "String"
+          }
+        }
+      },
+      "LOGINWINDOW_OSX" : {
+        "properties" : {
+          "configDetails" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/configJSON"
+            }
+          },
+          "details" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/loginWindowDetails"
+            }
+          },
+          "version" : {
+            "type" : "String"
+          }
+        }
+      },
+      "loginItemDetails" : {
+        "properties" : {
+          "loginItemPath" : {
+            "type" : "String"
+          },
+          "operationType" : {
+            "type" : "int"
+          }
+        }
+      },
+      "loginWindowDetails" : {
+        "properties" : {
+          "showUserName" : {
+            "type" : "boolean"
+          },
+          "showButtons" : {
+            "type" : "boolean"
+          },
+          "windowIdleTime" : {
+            "type" : "int"
+          },
+          "showNetworkUsers" : {
+            "type" : "boolean"
+          },
+          "askForPassword" : {
+            "type" : "boolean"
+          },
+          "enableExternalAccounts" : {
+            "type" : "boolean"
+          },
+          "showAdminUsers" : {
+            "type" : "boolean"
+          },
+          "enableFastUserSwitch" : {
+            "type" : "boolean"
+          },
+          "showLocalUsers" : {
+            "type" : "boolean"
+          },
+          "showPasswordHint" : {
+            "type" : "boolean"
+          },
+          "disableAutoLogin" : {
+            "type" : "boolean"
+          },
+          "enableConsoleLogin" : {
+            "type" : "boolean"
+          },
+          "showMobileAccounts" : {
+            "type" : "boolean"
+          },
+          "showOthers" : {
+            "type" : "boolean"
+          },
+          "bannerText" : {
+            "type" : "String"
+          },
+          "allowGuest" : {
+            "type" : "boolean"
+          },
+          "userLogoutTime" : {
+            "type" : "int"
+          }
+        }
+      },
+      "messageBoxDetails" : {
+        "properties" : {
+          "msgContent" : {
+            "type" : "String"
+          },
+          "msgTimeout" : {
+            "type" : "int"
+          },
+          "msgExecType" : {
+            "type" : "int"
+          },
+          "msgTitle" : {
+            "type" : "String"
+          },
+          "msgExecExpTime" : {
+            "type" : "String"
+          },
+          "msgStyle" : {
+            "type" : "int"
+          },
+          "msgExecCount" : {
+            "type" : "int"
+          },
+          "msgOperation" : {
+            "type" : "int"
+          }
+        }
+      },
+      "energySaverDetails" : {
+        "properties" : {
+          "systemSleepTimerACPower" : {
+            "type" : "int"
+          },
+          "wakeOnLanACPower" : {
+            "type" : "boolean"
+          },
+          "automaticStartupACPower" : {
+            "type" : "boolean"
+          },
+          "automaticStartupBattery" : {
+            "type" : "boolean"
+          },
+          "displaySleepTimerBattery" : {
+            "type" : "int"
+          },
+          "displaySleepTimerACPower" : {
+            "type" : "int"
+          },
+          "diskSleepBattery" : {
+            "type" : "boolean"
+          },
+          "systemSleepTimerBattery" : {
+            "type" : "int"
+          },
+          "diskSleepACPower" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "MESSAGEBOX_OSX" : {
+        "properties" : {
+          "configDetails" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/configJSON"
+            }
+          },
+          "details" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/messageBoxDetails"
+            }
+          },
+          "version" : {
+            "type" : "String"
+          }
+        }
+      },
+      "networkShareDetails" : {
+        "properties" : {
+          "operationType" : {
+            "type" : "int"
+          },
+          "url" : {
+            "type" : "String"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "Report_Read" : {
+        "type" : "apiKey",
+        "in" : "Authorization",
+        "name" : "Read Operation"
+      },
+      "Configurations_Write" : {
+        "type" : "apiKey",
+        "in" : "Authorization",
+        "name" : "Write Operation"
+      }
+    }
+  }
+}
+
